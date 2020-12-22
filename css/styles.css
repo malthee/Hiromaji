@@ -1,0 +1,54 @@
+/* Style File for the Hiromaji project */
+
+:root {
+    --hiromaji-main-color: #f7b8ca;
+    --hiromaji-secondary-color: #7db3e2;
+    --hiromaji-dark-color: #242038;
+    --hiromaji-headline-font: 'M PLUS Rounded 1c', sans-serif;
+    --hiromaji-text-font: 'Roboto', Tahoma, sans-serif;
+}
+
+.bg-hirom-dark {
+    background-color: var(--hiromaji-dark-color);
+}
+
+body {
+    font-family: var(--hiromaji-text-font);
+}
+
+.navbar-toggler {
+    background-color: rgb(247, 184, 202, 1);
+}
+
+.btn-hirom-main {
+    background-color: var(--hiromaji-main-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--hiromaji-headline-font);
+    font-weight: 700;
+}
+
+.top-icon {
+    height: 50px;
+    width: 50px;
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+#mainpage-cover {
+    background-image: url(../img/cherry_tree.jpg);
+    background-size: cover;
+}
+
+#main-title {
+    text-shadow: 0 0 7px black;
+    color: whitesmoke;
+}
