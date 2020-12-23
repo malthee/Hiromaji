@@ -26,6 +26,7 @@ h6 {
     font-weight: 700;
 }
 
+/*--- Navbar ---*/
 .navbar-toggler {
     background-color: rgb(247, 184, 202, 1);
 }
@@ -34,6 +35,7 @@ h6 {
     width: 350px;
 }
 
+/*---  Main Page Header --- */
 .btn-hirom-main {
     background-color: var(--hiromaji-main-color);
 }
@@ -57,9 +59,9 @@ h6 {
     text-shadow: 0 0 7px black;
     font-weight: 700;
     color: whitesmoke;
-    color: #eee6d8;
 }
 
+/*--- Feature Section ---*/
 .feature:nth-child(even) {
     background-color: var(--hiromaji-main-color);
 }
