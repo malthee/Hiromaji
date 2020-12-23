@@ -21,15 +21,15 @@
 <body>
     <header>
         <img src="img/hiromaji_logo.svg" class="top-icon" alt="Hiromaji Logo" height="50px" width="50px"></img>
-        <nav class="navbar navbar-light fixed-top justify-content-start">
-            <div class="ms-3 mt-1">
+        <nav class="navbar navbar-light fixed-top">
+            <div class="navbar-container ms-3 mt-1">
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbar-main" aria-controls="navbar-main" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse bg-white rounded ps-2 mt-1" id="navbar-main">
-                    <ul class="navbar-nav me-auto mb-2">
+                    <ul class="navbar-nav mb-2">
                         <li class="nav-item active">
                             <a class="nav-link" aria-current="page" href="">Home</a>
                         </li>
@@ -37,16 +37,7 @@
                             <a class="nav-link" href="#">Link</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
-                                aria-expanded="false">Dropdown</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <a class="nav-link" href="#">Link</a>
                         </li>
                     </ul>
                 </div>
@@ -63,19 +54,31 @@
         </div>
     </header>
     <main>
+        <section id="greeting" class="d-flex flex-column flex-md-row justify-content-center py-3">
+            <div class="align-self-center">
+                <h1 id="greeting-romaji" class="display-1 text-center">
+                    Konichiwa!
+                </h1>
+                <h1 id="greeting-hiragana" class="display-1 text-center">
+                    こんにちは
+                </h1>
+            </div>
+            <div class="align-self-center">
+                <img src="img/hiromaji_logo.svg" class="img-fluid" alt="Hiromaji Logo"></img>
+            </div>
+        </section>
         <section id="features" class="container py-4">
             <h1>What can you do with Hiromaji?</h1>
-            <hr class="featurette-divider">
-            <div class="row featurette">
+            <div class="row feature py-3 border-top border-bottom">
                 <div class="col-md-7">
-                    <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your
+                    <h2 class="feature-heading">First feature heading. <span class="text-muted">It’ll blow your
                             mind.</span></h2>
                     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
                         euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
                         tellus ac cursus commodo.</p>
                 </div>
                 <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg feature-image img-fluid mx-auto" width="500"
                         height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
@@ -84,17 +87,16 @@
                     </svg>
                 </div>
             </div>
-            <hr class="featurette-divider">
-            <div class="row featurette">
+            <div class="row feature py-3 border-top border-bottom">
                 <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
+                    <h2 class="feature-heading">Oh yeah, it’s that good. <span class="text-muted">See for
                             yourself.</span></h2>
                     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
                         euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
                         tellus ac cursus commodo.</p>
                 </div>
                 <div class="col-md-5 order-md-1">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg feature-image img-fluid mx-auto" width="500"
                         height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
@@ -103,26 +105,23 @@
                     </svg>
                 </div>
             </div>
-            <hr class="featurette-divider">
-            <div class="row featurette">
+            <div class="row feature py-3 border-top border-bottom">
                 <div class="col-md-7">
-                    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                    <h2 class="feature-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
                     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
                         euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
                         tellus ac cursus commodo.</p>
                 </div>
                 <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg feature-image img-fluid mx-auto" width="500"
                         height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa"
                             dy=".3em">500x500</text>
                     </svg>
-
                 </div>
             </div>
-            <hr class="featurette-divider">
         </section>
         <section id="team" class="container py-4">
             <div class="row">

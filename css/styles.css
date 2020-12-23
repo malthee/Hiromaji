@@ -16,14 +16,6 @@ body {
     font-family: var(--hiromaji-text-font);
 }
 
-.navbar-toggler {
-    background-color: rgb(247, 184, 202, 1);
-}
-
-.btn-hirom-main {
-    background-color: var(--hiromaji-main-color);
-}
-
 h1,
 h2,
 h3,
@@ -32,6 +24,18 @@ h5,
 h6 {
     font-family: var(--hiromaji-headline-font);
     font-weight: 700;
+}
+
+.navbar-toggler {
+    background-color: rgb(247, 184, 202, 1);
+}
+
+.navbar-container {
+    width: 350px;
+}
+
+.btn-hirom-main {
+    background-color: var(--hiromaji-main-color);
 }
 
 .top-icon {
@@ -46,9 +50,16 @@ h6 {
 #mainpage-cover {
     background-image: url(../img/cherry_tree.jpg);
     background-size: cover;
+    background-position: center center;
 }
 
 #main-title {
     text-shadow: 0 0 7px black;
+    font-weight: 700;
     color: whitesmoke;
+    color: #eee6d8;
+}
+
+.feature:nth-child(even) {
+    background-color: var(--hiromaji-main-color);
 }
