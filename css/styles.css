@@ -65,3 +65,8 @@ h6 {
 .feature:nth-child(even) {
     background-color: var(--hiromaji-main-color);
 }
+
+/*--- Selection page ---*/
+.char-table {
+    cursor: pointer;
+}
