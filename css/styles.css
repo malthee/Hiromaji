@@ -14,6 +14,7 @@
 
 body {
     font-family: var(--hiromaji-text-font);
+    overflow-x: hidden;
 }
 
 h1,
@@ -64,4 +65,9 @@ h6 {
 /*--- Feature Section ---*/
 .feature:nth-child(even) {
     background-color: var(--hiromaji-main-color);
+}
+
+/*--- Selection page ---*/
+.char-table {
+    cursor: pointer;
 }

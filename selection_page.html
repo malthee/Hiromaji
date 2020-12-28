@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiromaji</title>
+    <link rel="icon" type="svg" href="img/hiromaji_logo.svg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script src="https://kit.fontawesome.com/408ea30ffa.js" crossorigin="anonymous" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"
+        defer></script>
+    <!-- TODO replace with minified file after -->
+    <script src="js/charSelect.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="img/hiromaji_logo.svg" class="top-icon" alt="Hiromaji Logo" height="50px" width="50px"></img>
+        <nav class="navbar navbar-light fixed-top">
+            <div class="navbar-container ms-3 mt-1">
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-main" aria-controls="navbar-main" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse bg-white rounded ps-2 mt-1" id="navbar-main">
+                    <ul class="navbar-nav mb-2">
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="selection_page.html">Set characters</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hika_to_roma.html">Practice あ → A</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="roma_to_hika.html">Practice A → あ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section id="headline" class="pt-5 text-xl-center">
+            <div class="col-md-8 p-lg-5 p-3 mx-auto">
+                <h1 class="display-4">Select what you want to learn</h1>
+                <p class="lead">Your selection is automatically saved. To start learning you can navigate to
+                    <a href="roma_to_hika.html">Practice A → あ</a> or <a href="hika_to_roma.html">Practice あ → A</a>.
+                </p>
+            </div>
+        </section>
+        <noscript>
+            <div class="container alert alert-danger text-center">This Web app requires JavaScript to work!</div>
+        </noscript>
+    </header>
+    <main>
+        <section id="hiragana-section" class="container-fluid py-3">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-xl-6">
+                    <button class="btn btn-info w-100" role="button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#hiragana-table-container" aria-expanded="true"
+                        aria-controls="hiragana-table-container">
+                        <i class="fas fa-chevron-down"></i> Hiragana table
+                    </button>
+                </div>
+            </div>
+            <div class="row justify-content-center pt-2">
+                <div class="col-md-8 col-xl-6 show" id="hiragana-table-container">
+                    <table class="char-table table table-sm table-hover text-center align-middle align-items-center"
+                        id="hiragana-table">
+                        <thead>
+                            <tr class="char-table-row">
+                                <th scope="col"></th>
+                                <th scope="col">a</th>
+                                <th scope="col">i</th>
+                                <th scope="col">u</th>
+                                <th scope="col">e</th>
+                                <th scope="col">o</th>
+                                <th scope="col">
+                                    <label class="form-check-label" title="Toggle selection">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-all" disabled>
+                                        <small>select all</small>
+                                    </label>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="char-table-row">
+                                <th scope="row"></th>
+                                <td>あ</td>
+                                <td>い</td>
+                                <td>う</td>
+                                <td>え</td>
+                                <td>お</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-a" charVal="a" charType="hiragana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">k</th>
+                                <td>か</td>
+                                <td>き</td>
+                                <td>く</td>
+                                <td>け</td>
+                                <td>こ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-k" charVal="k" charType="hiragana" disabled>
+                                        <div class="small">k</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-g" charVal="g" charType="hiragana" disabled>
+                                        <div class="small">g</div>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">s</th>
+                                <td>さ</td>
+                                <td>し<div class="small">shi</div>
+                                </td>
+                                <td>す</td>
+                                <td>せ</td>
+                                <td>そ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-s" charVal="s" charType="hiragana" disabled>
+                                        <div class="small">s</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-z" charVal="z" charType="hiragana" disabled>
+                                        <div class="small">z</div>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">t</th>
+                                <td>た</td>
+                                <td>ち<div class="small">chi</div>
+                                </td>
+                                <td>つ<div class="small">tsu</div>
+                                </td>
+                                <td>て</td>
+                                <td>と</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-t" charVal="t" charType="hiragana" disabled>
+                                        <div class="small">t</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-d" charVal="d" charType="hiragana" disabled>
+                                        <div class="small">d</div>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">n</th>
+                                <td>な</td>
+                                <td>に</td>
+                                <td>ぬ</td>
+                                <td>ね</td>
+                                <td>の</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-n" charVal="n" charType="hiragana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">h</th>
+                                <td>は</td>
+                                <td>ひ</td>
+                                <td>ふ<div class="small">fu</div>
+                                </td>
+                                <td>へ</td>
+                                <td>ほ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-h" charVal="h" charType="hiragana" disabled>
+                                        <div class="small">h</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-b" charVal="b" charType="hiragana" disabled>
+                                        <div class="small">b</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-p" charVal="p" charType="hiragana" disabled>
+                                        <div class="small">p</div>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">m</th>
+                                <td>ま</td>
+                                <td>み</td>
+                                <td>む</td>
+                                <td>め</td>
+                                <td>も</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-m" charVal="m" charType="hiragana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">y</th>
+                                <td>や</td>
+                                <td empty></td>
+                                <td>ゆ</td>
+                                <td empty></td>
+                                <td>よ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-y" charVal="y" charType="hiragana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">r</th>
+                                <td>ら</td>
+                                <td>り</td>
+                                <td>る</td>
+                                <td>れ</td>
+                                <td>ろ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-r" charVal="r" charType="hiragana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">w</th>
+                                <td>わ</td>
+                                <td colspan="3" empty></td>
+                                <td>を<div class="small">o</div>
+                                </td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-w" charVal="w" charType="hiragana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <td empty></td>
+                                <td>ん<div class="small">n</div>
+                                <td colspan="4" empty></td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="hiragana-select-nch" charVal="nch" charType="hiragana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- TODO implement Katakana chars -->
+        <section id="katakana-section" class="container-fluid py-3">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-xl-6">
+                    <button class="btn btn-info w-100" role="button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#katakana-table-container" aria-expanded="true"
+                        aria-controls="katakana-table-container">
+                        <i class="fas fa-chevron-down"></i> Katakana table
+                    </button>
+                </div>
+            </div>
+            <div class="row justify-content-center pt-2">
+                <div class="col-md-8 col-xl-6 show" id="katakana-table-container">
+                    <table class="char-table table table-sm table-hover text-center align-middle align-items-center"
+                        id="katakana-table">
+                        <thead>
+                            <tr class="char-table-row">
+                                <th scope="col"></th>
+                                <th scope="col">a</th>
+                                <th scope="col">i</th>
+                                <th scope="col">u</th>
+                                <th scope="col">e</th>
+                                <th scope="col">o</th>
+                                <th scope="col">
+                                    <label class="form-check-label" title="Toggle selection">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-all" disabled>
+                                        <small>select all</small>
+                                    </label>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="char-table-row">
+                                <th scope="row"></th>
+                                <td>あ</td>
+                                <td>い</td>
+                                <td>う</td>
+                                <td>え</td>
+                                <td>お</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-a" charVal="a" charType="katakana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">k</th>
+                                <td>か</td>
+                                <td>き</td>
+                                <td>く</td>
+                                <td>け</td>
+                                <td>こ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-k" charVal="k" charType="katakana" disabled>
+                                        <div class="small">k</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-g" charVal="g" charType="katakana" disabled>
+                                        <div class="small">g</div>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">s</th>
+                                <td>さ</td>
+                                <td>し<div class="small">shi</div>
+                                </td>
+                                <td>す</td>
+                                <td>せ</td>
+                                <td>そ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-s" charVal="s" charType="katakana" disabled>
+                                        <div class="small">s</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-z" charVal="z" charType="katakana" disabled>
+                                        <div class="small">z</div>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">t</th>
+                                <td>た</td>
+                                <td>ち<div class="small">chi</div>
+                                </td>
+                                <td>つ<div class="small">tsu</div>
+                                </td>
+                                <td>て</td>
+                                <td>と</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-t" charVal="t" charType="katakana" disabled>
+                                        <div class="small">t</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-d" charVal="d" charType="katakana" disabled>
+                                        <div class="small">d</div>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">n</th>
+                                <td>な</td>
+                                <td>に</td>
+                                <td>ぬ</td>
+                                <td>ね</td>
+                                <td>の</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-n" charVal="n" charType="katakana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">h</th>
+                                <td>は</td>
+                                <td>ひ</td>
+                                <td>ふ<div class="small">fu</div>
+                                </td>
+                                <td>へ</td>
+                                <td>ほ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-h" charVal="h" charType="katakana" disabled>
+                                        <div class="small">h</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-b" charVal="b" charType="katakana" disabled>
+                                        <div class="small">b</div>
+                                    </label>
+                                    <label class="form-check-label ps-2">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-p" charVal="p" charType="katakana" disabled>
+                                        <div class="small">p</div>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">m</th>
+                                <td>ま</td>
+                                <td>み</td>
+                                <td>む</td>
+                                <td>め</td>
+                                <td>も</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-m" charVal="m" charType="katakana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">y</th>
+                                <td>や</td>
+                                <td empty></td>
+                                <td>ゆ</td>
+                                <td empty></td>
+                                <td>よ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-y" charVal="y" charType="katakana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">r</th>
+                                <td>ら</td>
+                                <td>り</td>
+                                <td>る</td>
+                                <td>れ</td>
+                                <td>ろ</td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-r" charVal="r" charType="katakana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <th scope="row">w</th>
+                                <td>わ</td>
+                                <td colspan="3" empty></td>
+                                <td>を<div class="small">o</div>
+                                </td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-w" charVal="w" charType="katakana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="char-table-row">
+                                <td empty></td>
+                                <td>ん<div class="small">n</div>
+                                <td colspan="4" empty></td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input char-select"
+                                            id="katakana-select-nch" charVal="nch" charType="katakana" disabled>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="start" class="container py-3">
+            <div class="row text-center">
+                <h1>Start practicing</h1>
+            </div>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="hika_to_roma.html" class="btn btn-info btn-lg">Practice あ → A</a>
+                <a href="roma_to_hika.html" class="btn btn-info btn-lg">Practice A → あ</a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-hirom-dark text-white mt-5">
+        <div class="container py-4">
+            <h1>Hiromaji</h1>
+            <h3>WDP3 Project 2020</h3>
+            <p class="mb-0">
+                Bavly Abousif and Marcel Salvenmoser
+                <a href="https://github.com/malthee/Hiromaji">
+                    <i class="fab fa-github"></i>&nbsp;Github
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
