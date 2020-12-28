@@ -54,6 +54,7 @@ function initializeCharTableEvents() {
     });
 
     const checkList = document.getElementsByClassName("char-select");
+    
     // enable all checkboxes and add events to char selection checkboxes
     for (let check of checkList) {
         if(!check.id.includes("select-all")){
