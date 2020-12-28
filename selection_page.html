@@ -11,11 +11,12 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.min.css">
     <script src="https://kit.fontawesome.com/408ea30ffa.js" crossorigin="anonymous" async></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"
         defer></script>
+    <script src="js/charSelect.js" defer></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
                 <div class="navbar-collapse collapse bg-white rounded ps-2 mt-1" id="navbar-main">
                     <ul class="navbar-nav mb-2">
                         <li class="nav-item active">
-                            <a class="nav-link" aria-current="page" href="">Home</a>
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="selection_page.html">Set characters</a>
@@ -56,12 +57,12 @@
                 </p>
             </div>
         </section>
-        <section id="hiragana-table" class="row justify-content-center py-3">
+        <section id="hiragana-section" class="row justify-content-center py-3">
             <div class="col-md-8 col-xl-6">
-                <table
-                    class="char-table table table-sm table-hover text-center align-middle align-items-center">
+                <table class="char-table table table-sm table-hover text-center align-middle align-items-center"
+                    id="hiragana-table">
                     <thead>
-                        <tr class="hiragana-row">
+                        <tr class="char-table-row">
                             <th scope="col"></th>
                             <th scope="col">a</th>
                             <th scope="col">i</th>
@@ -69,15 +70,15 @@
                             <th scope="col">e</th>
                             <th scope="col">o</th>
                             <th scope="col">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-all" onclick="hiraganaSelect('all')">
+                                <label class="form-check-label" title="Toggle selection">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-all" disabled>
+                                    <small>select all</small>
                                 </label>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row"></th>
                             <td>あ</td>
                             <td>い</td>
@@ -86,12 +87,12 @@
                             <td>お</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-a" onclick="hiraganaSelect('a')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-a"
+                                        charVal="a" charType="hiragana" disabled>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">k</th>
                             <td>か</td>
                             <td>き</td>
@@ -100,18 +101,18 @@
                             <td>こ</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-k" onclick="hiraganaSelect('k')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-k"
+                                        charVal="k" charType="hiragana" disabled>
                                     <div class="small">k</div>
                                 </label>
                                 <label class="form-check-label ps-2">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-g" onclick="hiraganaSelect('g')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-g"
+                                        charVal="g" charType="hiragana" disabled>
                                     <div class="small">g</div>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">s</th>
                             <td>さ</td>
                             <td>し<div class="small">shi</div>
@@ -121,18 +122,18 @@
                             <td>そ</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-s" onclick="hiraganaSelect('s')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-s"
+                                        charVal="s" charType="hiragana" disabled>
                                     <div class="small">s</div>
                                 </label>
                                 <label class="form-check-label ps-2">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-z" onclick="hiraganaSelect('z')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-z"
+                                        charVal="z" charType="hiragana" disabled> 
                                     <div class="small">z</div>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">t</th>
                             <td>た</td>
                             <td>ち<div class="small">chi</div>
@@ -143,18 +144,18 @@
                             <td>と</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-t" onclick="hiraganaSelect('t')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-t"
+                                        charVal="t" charType="hiragana" disabled>
                                     <div class="small">t</div>
                                 </label>
                                 <label class="form-check-label ps-2">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-d" onclick="hiraganaSelect('d')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-d"
+                                        charVal="d" charType="hiragana" disabled>
                                     <div class="small">d</div>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">n</th>
                             <td>な</td>
                             <td>に</td>
@@ -163,12 +164,12 @@
                             <td>の</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-n" onclick="hiraganaSelect('n')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-n"
+                                        charVal="n" charType="hiragana" disabled>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">h</th>
                             <td>は</td>
                             <td>ひ</td>
@@ -178,23 +179,23 @@
                             <td>ほ</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-h" onclick="hiraganaSelect('h')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-h"
+                                        charVal="h" charType="hiragana" disabled>
                                     <div class="small">h</div>
                                 </label>
                                 <label class="form-check-label ps-2">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-b" onclick="hiraganaSelect('b')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-b"
+                                        charVal="b" charType="hiragana" disabled>
                                     <div class="small">b</div>
                                 </label>
                                 <label class="form-check-label ps-2">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-p" onclick="hiraganaSelect('p')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-p"
+                                        charVal="p" charType="hiragana" disabled>
                                     <div class="small">p</div>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">m</th>
                             <td>ま</td>
                             <td>み</td>
@@ -203,12 +204,12 @@
                             <td>も</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-m" onclick="hiraganaSelect('m')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-m"
+                                        charVal="m" charType="hiragana" disabled>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">y</th>
                             <td>や</td>
                             <td empty></td>
@@ -217,12 +218,12 @@
                             <td>よ</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-y" onclick="hiraganaSelect('y')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-y"
+                                        charVal="y" charType="hiragana" disabled>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">r</th>
                             <td>ら</td>
                             <td>り</td>
@@ -231,12 +232,12 @@
                             <td>ろ</td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-r" onclick="hiraganaSelect('r')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-r"
+                                        charVal="r" charType="hiragana" disabled>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <th scope="row">w</th>
                             <td>わ</td>
                             <td colspan="3" empty></td>
@@ -244,19 +245,19 @@
                             </td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-w" onclick="hiraganaSelect('w')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-w"
+                                        charVal="w" charType="hiragana" disabled>
                                 </label>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="char-table-row">
                             <td empty></td>
                             <td>ん<div class="small">n</div>
                             <td colspan="4" empty></td>
                             <td>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input character-select"
-                                        id="hiragana-select-nch" onclick="hiraganaSelect('nch')">
+                                    <input type="checkbox" class="form-check-input char-select" id="hiragana-select-nch"
+                                        charVal="nch" charType="hiragana" disabled>
                                 </label>
                             </td>
                         </tr>
@@ -264,10 +265,14 @@
                 </table>
             </div>
         </section>
-        <section id="katakana-table" class="justify-content-center py-3">
-
+        <section id="katakana-section" class="row justify-content-center py-3">
+            <!-- TODO REMOVE AFTER KATAKANA IMPLEMENTATION -->
+            <label class="form-check-label" title="Toggle selection">
+                <input type="checkbox" class="form-check-input" id="katakana-select-all">
+                <small>select all</small>
+            </label>
         </section>
-        <section id="start-section" class="justify-content-center py-3">
+        <section id="start" class="row justify-content-center py-3">
 
         </section>
     </main>
