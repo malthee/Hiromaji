@@ -91,3 +91,8 @@ h6 {
     font-size: 45vmin;
     line-height: 0.9;
 }
+
+.history-item {
+    height: 50px;
+    width: 50px;
+}
