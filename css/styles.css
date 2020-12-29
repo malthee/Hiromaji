@@ -12,9 +12,23 @@
     background-color: var(--hiromaji-dark-color);
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* Sticky footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+}
+
 body {
     font-family: var(--hiromaji-text-font);
     overflow-x: hidden;
+    margin-bottom: 180px;
 }
 
 h1,
@@ -70,4 +84,10 @@ h6 {
 /*--- Selection page ---*/
 .char-table {
     cursor: pointer;
+}
+
+/*--- Practice page --*/
+#display-char {
+    font-size: 45vmin;
+    line-height: 0.9;
 }
