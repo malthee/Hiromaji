@@ -43,7 +43,7 @@ h6 {
 
 /*--- Navbar ---*/
 .navbar-toggler {
-    background-color: rgb(247, 184, 202, 1);
+    background-color: var(--hiromaji-main-color);
 }
 
 .navbar-container {
@@ -78,7 +78,7 @@ h6 {
 
 /*--- Feature Section ---*/
 .feature:nth-child(even) {
-    background-color: var(--hiromaji-main-color);
+    background-color: rgba(247, 184, 202, 0.6);
 }
 
 /*--- Selection page ---*/
