@@ -28,6 +28,7 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <a class="btn" href="selection_page.html" title="Back to character selection"><i class="fas fa-undo fa-2x"></i></a>
                 <div class="navbar-collapse collapse bg-white rounded ps-2 mt-1" id="navbar-main">
                     <ul class="navbar-nav mb-2">
                         <li class="nav-item active">
@@ -57,7 +58,12 @@
                     <div class="text-center user-select-none">
                         <span id="display-char">A</span>
                     </div>
-                    <input type="text" id="user-input" class="form-control text-center"/>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Romaji</span>
+                        </div>
+                        <input type="text" id="user-input" class="form-control text-center" />
+                    </div>
                 </div>
                 <div id="history-board" class="col-12 col-md-3 p-2 align">
                     <div class="d-flex flex-wrap gap-1">
