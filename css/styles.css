@@ -87,12 +87,17 @@ h6 {
 }
 
 /*--- Practice page --*/
-#display-char {
-    font-size: 45vmin;
+#display-char { 
+    font-size: clamp(16px, 45vmin, 600px);;
     line-height: 0.9;
+    font-family: var(--hiromaji-headline-font);
 }
 
 .history-item {
     height: 50px;
     width: 50px;
+}
+
+.char-select-button {
+    font-family: var(--hiromaji-headline-font);
 }

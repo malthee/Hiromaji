@@ -28,7 +28,8 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="btn" href="selection_page.html" title="Back to character selection"><i class="fas fa-undo fa-2x"></i></a>
+                <a class="btn" href="selection_page.html" title="Back to character selection"><i
+                        class="fas fa-undo fa-2x"></i></a>
                 <div class="navbar-collapse collapse bg-white rounded ps-2 mt-1" id="navbar-main">
                     <ul class="navbar-nav mb-2">
                         <li class="nav-item active">
@@ -52,17 +53,20 @@
         <noscript>
             <div class="container alert alert-danger text-center">This Web app requires JavaScript to work!</div>
         </noscript>
-        <section id="practice-main" class="container mt-5 py-2">
+        <section id="practice-main" class="container mt-5 py-4">
             <div class="row justify-content-end gap-3">
                 <div id="practice-field" class="col-12 col-md-6">
                     <div class="text-center user-select-none">
-                        <span id="display-char">A</span>
+                        <span id="display-char">か</span>
                     </div>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Romaji</span>
                         </div>
-                        <input type="text" id="user-input" class="form-control text-center" />
+                        <input type="text" id="user-input" class="form-control text-center is-valid" />
+                        <div class="input-group-append">
+                            <button class="btn btn-info" type="button">Submit</button>
+                        </div>
                     </div>
                 </div>
                 <div id="history-board" class="col-12 col-md-3 p-2 align">
