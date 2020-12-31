@@ -57,5 +57,3 @@ function initializeCharTableEvents() {
         row.addEventListener("click", toggleCharRow);
     }
 }
-
-window.onload = initializeCharTableEvents;
