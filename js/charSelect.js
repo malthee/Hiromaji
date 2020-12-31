@@ -3,8 +3,8 @@ The selection is saved in localstorage after a checkbox has been clicked. */
 
 // called by checkboxes, adds selected character combinations to localstorage
 function characterRowSelect() {
-    let charType = this.getAttribute("charType");
     let charVal = this.getAttribute("charVal");
+    let charType = this.getAttribute("charType");
 
     if (charType !== "hiragana" && charType !== "katakana") {
         console.error("Invalid charType in characterRowSelect.");
