@@ -14,7 +14,9 @@ function toggleAllCharRows(charType) {
     const checkList = charTable.getElementsByTagName("tbody")[0].getElementsByClassName("char-select");
 
     for (let check of checkList) {
-        check.checked = selectAllCheck.checked;
+        if (check.checked != selectAllCheck.checked) {
+            check.click();
+        }
     }
 }
 
