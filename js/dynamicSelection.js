@@ -2,18 +2,19 @@
 /* dynamicSelection.js allows selecting and toggling of multiple checkboxes at once through select-all or row based select
 unlocks checkboxes on window load */
 
-// toggles every checkbox of this charType table
+// sets every checkBox of this charType to the checked state of the select all checkBox
 function toggleAllCharRows(charType) {
     if (charType !== "hiragana" && charType !== "katakana") {
         console.error("Invalid charType in characterSelect.");
         return;
     }
-
+    
+    const selectAllCheck = document.getElementById(charType + "-select-all");
     const charTable = document.getElementById(charType + "-table");
     const checkList = charTable.getElementsByTagName("tbody")[0].getElementsByClassName("char-select");
 
     for (let check of checkList) {
-        check.click();
+        check.checked = selectAllCheck.checked;
     }
 }
 
