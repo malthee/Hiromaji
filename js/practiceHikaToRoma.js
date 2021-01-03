@@ -37,7 +37,7 @@ function submitInput(){
     }
     let correctAnswer = kana[i].romaji;
 
-    if (inputField.value == correctAnswer){
+    if (inputField.value.toLowerCase() == correctAnswer){
         inputField.classList.remove("is-invalid");
 
         addToHistory(askedKana, correctAnswer, firstTry);

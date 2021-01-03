@@ -1,6 +1,7 @@
 /* practice.js sets up and filters the Kana used for the practice modes
     requires file with initInput and checkChar(charsToLearn) to be included before practice.js
 */
+
 let kana = null;
 
 function permute() {
