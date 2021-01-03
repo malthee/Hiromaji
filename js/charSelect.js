@@ -12,13 +12,18 @@ function characterRowSelect() {
     }
 
     let stored = localStorage.getItem("string");
+
     if (!stored) {
         localStorage.setItem("string", charVal);
     } else {
         if (this.checked && !stored.includes(charVal)) {
             localStorage.setItem("string", stored + charVal);
+
+            setSelectAllState();
+
         } else {
             localStorage.setItem("string", stored.replace(charVal, ""));
+            document.getElementById(charType + "-select-all").checked = false;
         }
     }
 }
@@ -28,6 +33,7 @@ function initializeCheckboxes() {
     const checkBoxes = document.getElementsByClassName("char-select");
     let stored = localStorage.getItem("string");
     if (stored) {
+
         for (let box of checkBoxes) {
             let charVal = box.getAttribute("charVal");
             if (stored.includes(charVal)) {
@@ -37,9 +43,36 @@ function initializeCheckboxes() {
     }
 }
 
+function setSelectAllState() {
+    const checkBoxes = document.getElementsByClassName("char-select");
+    let hiraSelectAll = true;
+    let kataSelectAll = true;
+
+    for (let box of checkBoxes) {
+        if (!box.checked) {
+            switch (box.getAttribute("charType")) {
+                case "hiragana":
+                    hiraSelectAll = false;
+                    break;
+                case "katakana":
+                    kataSelectAll = false;
+                    break;
+            }
+        }
+    }
+
+    if (hiraSelectAll) {
+        document.getElementById("hiragana-select-all").checked = true;
+    }
+    if (kataSelectAll) {
+        document.getElementById("katakana-select-all").checked = true;
+    }
+}
+
 function init() {
     initializeCharTableEvents();
     initializeCheckboxes();
+    setSelectAllState();
 }
 
 window.onload = init;

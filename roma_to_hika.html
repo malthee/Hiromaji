@@ -12,10 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.min.css">
+    <script src="js/practiceRomaToHika.min.js" defer></script>
+    <script src="js/practice.min.js" defer></script>
+    <script src="js/history.min.js" defer></script>
     <script src="https://kit.fontawesome.com/408ea30ffa.js" crossorigin="anonymous" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"
-        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"
+        defer>
+    </script>
 </head>
 
 <body>
@@ -28,7 +32,8 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="btn" href="selection_page.html" title="Back to character selection"><i class="fas fa-undo fa-2x"></i></a>
+                <a class="btn" href="selection_page.html" title="Back to character selection"><i
+                        class="fas fa-undo fa-2x"></i></a>
                 <div class="navbar-collapse collapse bg-white rounded ps-2 mt-1" id="navbar-main">
                     <ul class="navbar-nav mb-2">
                         <li class="nav-item active">
@@ -54,26 +59,30 @@
         </noscript>
         <section id="practice-main" class="container mt-5 py-4">
             <div id="selection-missing" class="alert alert-info d-none" role="alert">
-                You have not selected any characters to learn! Please navigate to <a href="selection_page.html">the selection page.</a>.
+                You have not selected any or too few characters to learn! Please navigate to <a
+                    href="selection_page.html">the selection page.</a>.
             </div>
-            <div class="row justify-content-end gap-3">
-                <div id="practice-field" class="col-12 col-md-6">
+            <div class="row justify-content-end gap-4">
+                <div id="practice-field" class="col-12 col-xl-7">
                     <div class="text-center user-select-none">
                         <span id="display-char">?</span>
                     </div>
                     <div class="d-flex gap-2 justify-content-center">
-                        <button class="btn btn-lg btn-info fs-1 char-select-button" value="?" disabled>?</button>
-                        <button class="btn btn-lg btn-info fs-1 char-select-button" value="?" disabled>?</button>
-                        <button class="btn btn-lg btn-info fs-1 char-select-button" value="?" disabled>?</button>
-                        <button class="btn btn-lg btn-info fs-1 char-select-button" value="?" disabled>?</button>
+                        <button class="btn btn-lg btn-info char-select-button rounded" value="?" disabled>?</button>
+                        <button class="btn btn-lg btn-info char-select-button rounded" value="?" disabled>?</button>
+                        <button class="btn btn-lg btn-info char-select-button rounded" value="?" disabled>?</button>
+                        <button class="btn btn-lg btn-info char-select-button rounded" value="?" disabled>?</button>
                     </div>
                 </div>
-                <div class="col-12 col-md-3 p-2 align">
-                    <div id="history-board" class="d-flex flex-wrap gap-1">
+                <div class="col-12 col-xl-2 p-2 align">
+                    <div id="history-board"
+                        class="d-flex flex-wrap gap-1 justify-content-center">
                         <!-- Template for history elements -->
-                        <div id="history-item-template" class="d-flex history-item border rounded d-none">
+                        <a tabindex="0" role="button" id="history-item-template"
+                            class="btn d-flex history-item border rounded d-none" data-bs-container="body"
+                            data-bs-toggle="popover" data-bs-placement="top" data-bs-content="?">
                             <span class="history-item-text m-auto">A</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
