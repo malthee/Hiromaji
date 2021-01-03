@@ -96,18 +96,22 @@ h6 {
 
 /*--- Practice page --*/
 #display-char { 
-    font-size: clamp(16px, 45vmin, 600px);;
+    font-size: clamp(16px, 38vmin, 400px);;
     line-height: 0.9;
     font-family: var(--hiromaji-headline-font);
 }
 
 .history-item {
-    height: 50px;
-    width: 50px;
+    height: 65px;
+    width: 65px;
 }
 
 .history-item-text {
     font-size: 25px;
+}
+
+.popover-body {
+    font-size: 20px;
 }
 
 .history-item-success {
@@ -120,4 +124,5 @@ h6 {
 
 .char-select-button {
     font-family: var(--hiromaji-headline-font);
+    font-size: clamp(16px, 7vmin, 300px);
 }

@@ -1,4 +1,4 @@
-const MAX_HISTORY_ELEMENTS = 26;
+const MAX_HISTORY_ELEMENTS = 16;
 
 function addToHistory(askedKana, correctAnswer, firstTry){
     // remove old history elements
