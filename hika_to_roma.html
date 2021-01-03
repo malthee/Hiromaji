@@ -12,10 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.min.css">
-    <script src="https://kit.fontawesome.com/408ea30ffa.js" crossorigin="anonymous" async></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"
-        defer></script>
+    <!-- TODO minify this -->
+    <script src="js/history.js" defer></script>
+    <script src="js/practiceHikaToRoma.js" defer></script>
+    <script src="js/practice.js" defer></script>
+    <script src="https://kit.fontawesome.com/408ea30ffa.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer>
+    </script>
 </head>
 
 <body>
@@ -54,27 +58,33 @@
             <div class="container alert alert-danger text-center">This Web app requires JavaScript to work!</div>
         </noscript>
         <section id="practice-main" class="container mt-5 py-4">
+            <div id="selection-missing" class="alert alert-info d-none" role="alert">
+                You have not selected any characters to learn! Please navigate to <a href="selection_page.html">the
+                    selection page.</a>.
+            </div>
             <div class="row justify-content-end gap-3">
                 <div id="practice-field" class="col-12 col-md-6">
                     <div class="text-center user-select-none">
-                        <span id="display-char">か</span>
+                        <span id="display-char">?</span>
                     </div>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">Romaji</span>
+                            <button id="user-help" class="btn btn-info" type="button" disabled>Help</button>
                         </div>
-                        <input type="text" id="user-input" class="form-control text-center is-valid" />
+                        <input type="text" id="user-input" class="form-control text-center" disabled />
                         <div class="input-group-append">
-                            <button class="btn btn-info" type="button">Submit</button>
+                            <button id="user-submit" class="btn btn-info" type="button" disabled>Submit</button>
                         </div>
                     </div>
                 </div>
-                <div id="history-board" class="col-12 col-md-3 p-2 align">
-                    <div class="d-flex flex-wrap gap-1">
+                <div class="col-12 col-md-3 p-2 align">
+                    <div id="history-board" class="d-flex flex-wrap gap-1">
                         <!-- Template for history elements -->
-                        <div id="history-item-template" class="d-flex history-item border rounded d-none">
+                        <a tabindex="0" role="button" id="history-item-template"
+                            class="btn d-flex history-item border rounded d-none" data-bs-container="body"
+                            data-bs-toggle="popover" data-bs-placement="top" data-bs-content="ka">
                             <span class="history-item-text m-auto">A</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
