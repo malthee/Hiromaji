@@ -32,5 +32,4 @@ async function initPractice() {
     }
 } 
 
-
 window.onload = initPractice;

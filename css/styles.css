@@ -12,6 +12,14 @@
     background-color: var(--hiromaji-dark-color);
 }
 
+.bg-hirom-main {
+    background-color: var(--hiromaji-secondary-color);
+}
+
+.bg-hirom-secondary {
+    background-color: var(--hiromaji-main-color);
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -96,6 +104,18 @@ h6 {
 .history-item {
     height: 50px;
     width: 50px;
+}
+
+.history-item-text {
+    font-size: 25px;
+}
+
+.history-item-success {
+    background-color: rgb(114, 212, 84);
+}
+
+.history-item-fail {
+    background-color: rgba(243, 57, 57, 0.712);
 }
 
 .char-select-button {
