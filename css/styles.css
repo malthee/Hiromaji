@@ -58,18 +58,16 @@ h6 {
     width: 350px;
 }
 
-/*---  Main Page Header --- */
-.btn-hirom-main {
-    background-color: var(--hiromaji-main-color);
-}
-
-.top-icon {
-    height: 50px;
-    width: 50px;
-    z-index: 1;
+.top-icon-link {
+    z-index: 1030; /* to be top of navbar */
     position: absolute;
     top: 10px;
     right: 20px;
+}
+
+/*---  Main Page Header --- */
+.btn-hirom-main {
+    background-color: var(--hiromaji-main-color);
 }
 
 #mainpage-cover {
@@ -94,7 +92,7 @@ h6 {
     cursor: pointer;
 }
 
-/*--- Practice page --*/
+/*--- Practice pages --*/
 #display-char { 
     font-size: clamp(16px, 38vmin, 400px);;
     line-height: 0.9;
