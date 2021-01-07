@@ -1,3 +1,5 @@
+// show last few practiced elements 
+
 const MAX_HISTORY_ELEMENTS = 16;
 
 function addToHistory(askedKana, correctAnswer, firstTry){
@@ -8,6 +10,7 @@ function addToHistory(askedKana, correctAnswer, firstTry){
         historyItems[historyItems.length - 2].remove();
     }
 
+    // add new history elements + bootstrap popover
     let clone = document.getElementById("history-item-template").cloneNode(true);
     clone.removeAttribute("id");
     clone.classList.remove("d-none"); 

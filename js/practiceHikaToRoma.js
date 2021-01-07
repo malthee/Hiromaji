@@ -7,10 +7,12 @@ function initInput(){
     let userSubmit = document.getElementById("user-submit");
     let userHelp = document.getElementById("user-help");
 
+    // enable input field and button after page is fully loaded
     userInput.disabled = false;
     userSubmit.disabled = false;
     userHelp.disabled = false;
 
+    // submit on enter key
     userInput.addEventListener("keyup", event => {
         if (event.key === "Enter") {
             userSubmit.click();
@@ -20,6 +22,7 @@ function initInput(){
     userHelp.addEventListener("click", showHelp);
 }
 
+    // show first character and wait for first submit
 function startPractice(charsToLearn) {
     let displayChar = document.getElementById("display-char");
     displayChar.innerHTML = charsToLearn.charAt(idx);
@@ -37,6 +40,7 @@ function submitInput(){
     }
     let correctAnswer = kana[i].romaji;
 
+    // process submission
     if (inputField.value.toLowerCase() == correctAnswer){
         inputField.classList.remove("is-invalid");
 
@@ -63,6 +67,7 @@ function submitInput(){
     displayChar.innerHTML = chars.charAt(idx);
 }
 
+// fill in correct answer
 function showHelp(){
     let askedKana = document.getElementById("display-char").innerHTML;
 

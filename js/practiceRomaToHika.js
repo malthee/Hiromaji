@@ -5,11 +5,13 @@ let firstTry = true;
 function initInput() {
     let charSelectButtons = document.getElementsByClassName("char-select-button");
 
+    // enable buttons after page is fully loaded
     for (let btn of charSelectButtons) {
         btn.disabled = false;
         btn.addEventListener("click", submitSelection);
     }
 
+    // bind numbers 1 - 4 to buttons
     document.addEventListener("keyup", event => {
         switch (event.key) {
             case "1":
@@ -34,6 +36,7 @@ function submitSelection() {
     //get correct answer from kana array
     let correctAnswer = chars.charAt(idx);
 
+    // process answer
     if (this.value == correctAnswer){
         addToHistory(askedRomaji, correctAnswer, firstTry);
 
@@ -54,12 +57,14 @@ function submitSelection() {
         unlockButtons();
 
     } else {
+        // disable button on wrong answer
         firstTry = false;
         this.disabled = true;
     }
 
 }
 
+// enable all buttons
 function unlockButtons(){
     let btnList = document.getElementsByClassName("char-select-button");
     for (let btn of btnList) {
@@ -68,6 +73,7 @@ function unlockButtons(){
     return;
 }
 
+// generate first question 
 function startPractice(charsToLearn) {
     if (charsToLearn.length < 4) {
         document.getElementById("selection-missing").classList.remove("d-none");
@@ -87,6 +93,7 @@ function startPractice(charsToLearn) {
     return;
 }
 
+// fill all buttons wit viable options 
 function generateBtnOptions(askedKana){
     let indices = getRandIndices();
     let options = getThreeOptions(askedKana);
@@ -100,6 +107,7 @@ function generateBtnOptions(askedKana){
     btnList[parseInt(indices.charAt(3))].value = askedKana;
 }
 
+// look up romaji to given hiragana/katakana
 function getRomaji(askedKana){
     let i = 0;
     while (i < kana.length && kana[i].kana != askedKana){
@@ -108,6 +116,7 @@ function getRomaji(askedKana){
     return kana[i].romaji;
 }
 
+// generate set of random positions for four elements
 function getRandIndices() {
     let sortedIndices = "0123";
     let permutation = "";
@@ -121,6 +130,7 @@ function getRandIndices() {
     return permutation;
 }
 
+// get three viable options for wrong anwsers on buttons
 function getThreeOptions(askedKana){
     let options = "";
     while(options.length < 3){
