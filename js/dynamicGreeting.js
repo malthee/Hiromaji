@@ -1,3 +1,4 @@
+// change greeting on the main page depending on time of day
 function setGreeting(){
     let romajiGreeting = document.getElementById("greeting-romaji");
     let hiraGreeting = document.getElementById("greeting-hiragana");
