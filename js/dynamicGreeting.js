@@ -4,8 +4,6 @@ function setGreeting(){
     let today = new Date();
     let hour = today.getHours();
 
-    hour = 0;
-
     if (hour < 5){
         romajiGreeting.innerHTML = "Tetsuya desu ka?";
         hiraGreeting.innerHTML = "てつやですか？";
