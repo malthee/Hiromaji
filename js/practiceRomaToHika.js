@@ -75,7 +75,7 @@ function unlockButtons(){
 
 // generate first question 
 function startPractice(charsToLearn) {
-    if (charsToLearn.length < 4) {
+    if (charsToLearn.length < 5) {
         document.getElementById("selection-missing").classList.remove("d-none");
         for (let btn of document.getElementsByClassName("char-select-button")) {
             btn.disabled = true;
@@ -133,9 +133,13 @@ function getRandIndices() {
 // get three viable options for wrong anwsers on buttons
 function getThreeOptions(askedKana){
     let options = "";
+    let askedRomaji = getRomaji(askedKana);
+
     while(options.length < 3){
         let randKana = chars.charAt(Math.floor(Math.random() * chars.length));
-        if (randKana != askedKana && !options.includes(randKana)) {
+        let randRomaji = getRomaji(randKana);
+        // only allow unique choices and avoid multiple solutions 
+        if (!options.includes(randKana) && randRomaji != askedRomaji) {
             options += randKana;
             randKana = "";
         }
